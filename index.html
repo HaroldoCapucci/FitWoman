@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>FitWoman - Nutrição & Treino</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💪 FitWoman</h1>
+            <input type="date" id="datePicker" value="">
+        </header>
+
+        <section class="card">
+            <h2>🍽️ Refeições do dia</h2>
+            <form id="mealForm">
+                <input type="text" id="mealName" placeholder="Ex: Café da manhã" required>
+                <input type="number" id="mealCal" placeholder="Calorias" required>
+                <input type="number" id="mealProtein" placeholder="Proteínas (g)" step="1">
+                <input type="number" id="mealCarbs" placeholder="Carboidratos (g)" step="1">
+                <input type="number" id="mealFat" placeholder="Gorduras (g)" step="1">
+                <button type="submit">Adicionar refeição</button>
+            </form>
+            <ul id="mealList"></ul>
+        </section>
+
+        <section class="card">
+            <h2>🏋️‍♀️ Treinos de hoje</h2>
+            <form id="workoutForm">
+                <select id="exerciseSelect">
+                    <option value="Agachamento">Agachamento</option>
+                    <option value="Leg Press">Leg Press</option>
+                    <option value="Cadeira Flexora">Cadeira Flexora</option>
+                    <option value="Cadeira Extensora">Cadeira Extensora</option>
+                    <option value="Glúteo Máquina">Glúteo Máquina</option>
+                    <option value="Remada Baixa">Remada Baixa</option>
+                    <option value="Puxada Frente">Puxada Frente</option>
+                    <option value="Desenvolvimento">Desenvolvimento</option>
+                    <option value="Elevação Lateral">Elevação Lateral</option>
+                    <option value="Rosca Direta">Rosca Direta</option>
+                    <option value="Tríceps Polia">Tríceps Polia</option>
+                    <option value="Abdominal">Abdominal</option>
+                </select>
+                <input type="number" id="workoutSets" placeholder="Séries" required>
+                <input type="number" id="workoutReps" placeholder="Repetições" required>
+                <button type="submit">Adicionar exercício</button>
+            </form>
+            <ul id="workoutList"></ul>
+        </section>
+
+        <section class="card">
+            <h2>📊 Resumo do dia</h2>
+            <div id="summary">
+                <p>Calorias totais: <span id="totalCal">0</span> kcal</p>
+                <p>Proteínas: <span id="totalProtein">0</span> g | Carboidratos: <span id="totalCarbs">0</span> g | Gorduras: <span id="totalFat">0</span> g</p>
+            </div>
+            <canvas id="macrosChart" width="400" height="200"></canvas>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
